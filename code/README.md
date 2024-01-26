@@ -45,12 +45,10 @@ The framework of matlab code is shown in D-HFJSP_framework_of_code.png and descr
 		* Output: 'final_best_value' (MTAT of the best solution), 'final_best_solution' (the best-so-far solution), 'cost' (MTAT of all the local optima), 'solution' (all the local optima)
 		* 'dis_opt' (the distance from the local optima to the global optima), 'dif_opt' (the difference in MTAT of the local optima and the global optima), 'fdc' (fdc value), 'trend' (the descending curve)
 		* The functions **input_block**, **COST**, **ite_ls_operator** are sourced.
-	* **Graph3D.m**: Get the nodes and links of LON from all the independent runs. Input: 'cost' (MTAT of the local optima) and 'solution' (the local search optima); Output: 'nodes' and 'links' of LON.
-
+	
 	* **input_block.m**: Generate the block of each specimen based on the capability of machines. Input: the 'data' structure; Output: the 'data' structure with block permutation in 3rd row of data.Specimen. * The function **maxgcd** is sourced. 
 	* **intial_order_RAER.m**: Generate a set of diverse solutions based on the input permutation. Input: 'seed_solution' (the seed solution of diversification generator), 'upper_bound' (the upper bound of diversification generator); Output: 'ini_order' (a collection of random solutions for NEH heuristic).
 	* **NEH.m**: NEH heuristic algorithm for diversification generation method. Input: 'data' (the data structure); Output: 'cost' (the MTAT of the proposed solution), 'tran_solution' (the solution generated with NEH). The function **COST** is sourced. 
-	* **RAER.m**: NEH-B heuristic algorithm for diversification generation method. Input: 'data' (the data structure), 'r_sequence' (the randomly generated initial sequence); Output: 'cost' (the MTAT of the proposed solution), 'all_solution' (the solution generated with NEH-B). The function **COST** is sourced. 
 	* **COST.m**: Decode the VSS into a schedule. Input: 'SS0' (VSS), 'data' (the parameters of the instance), ('transport', which has not been considered in this paper); Output: 'Cost' (MTAT).
 	* **r_distance.m**: Calculate the Job precedence rule-based distance metric between two permutations. Input: two VSSs; Output: the JPR distance of two inputs.
 	* **combination_method.m**: The function of solution combination to generate a new trial solution by splicing the reference solutions in subset.
@@ -144,7 +142,7 @@ The framework of matlab code is shown in D-HFJSP_framework_of_code.png and descr
 		* Input: 'data', 'max_nfe', 't0SA' (their meanings are the same as those in **nwk_ss.m**)
 		* Output:  'final_best_value', 'final_best_solution', 'nfe', 'cput', 'totalt', 'trend' (their meanings are the same as those in **nwk_ss.m**), 'Pro_record' (the probability of the Roulette)
 		* The functions **input_block**, **COST**, **local_search_meta_initialization**, **local_search_meta** are sourced. 
-	* **nwk_HH_SR(BS, RL, RPD)_SA(IO, NA, AM, GDEL, LACC).m**: The main function of Hyperheuristics (SR-SA, SR-IO, SR-NA, SR-AM, SR-GDEL, SR-LACC, BS-SA, BS-IO, BS-NA, BS-AM, BS-GDEL, BS-LACC, RL-SA, RL-IO, RL-NA, RL-AM, RL-GDEL, RL-LACC, RPD-SA, RPD-IO, RPD-NA, RPD-AM, RPD-GDEL, RPD-LACC).
+	* **nwk_HH_SR(BS, RPD)_SA(NA, AM, GDEL, LACC).m**: The main function of Hyperheuristics (SR-SA, SR-NA, SR-AM, SR-GDEL, SR-LACC, BS-SA, BS-NA, BS-AM, BS-GDEL, BS-LACC, RPD-SA, RPD-NA, RPD-AM, RPD-GDEL, RPD-LACC).
 		* Input: 'data', 'max_nfe', 't0SA' (their meanings are the same as those in **nwk_ss.m**)
 		* Output:  'final_best_value', 'final_best_solution', 'cput'(their meanings are the same as those in **nwk_ss.m**), 'Pro_record' (the probability of the Roulette)
 		* The functions **input_block**, **Roulette** and **COST** are sourced. 
