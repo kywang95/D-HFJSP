@@ -143,7 +143,7 @@ The framework of matlab code is shown in D-HFJSP_framework_of_code.png and descr
 		* Input: 'data', 'max_nfe', 't0SA' (their meanings are the same as those in **nwk_ss.m**)
 		* Output:  'final_best_value', 'final_best_solution', 'nfe', 'cput', 'totalt', 'trend' (their meanings are the same as those in **nwk_ss.m**), 'Pro_record' (the probability of the Roulette)
 		* The functions **input_block**, **COST**, **local_search_meta_initialization**, **local_search_meta** are sourced. 
-	* **nwk_HH_SR(BS, RL, RPD)_SA(IO, NA, AM, GDEL, LACC).m**: The main function of Hyperheuristics (SR-SA, SR-IO, SR-NA, SR-AM, SR-GDEL, SR-LACC, BS-SA, BS-IO, BS-NA, BS-AM, BS-GDEL, BS-LACC, RL-SA, RL-IO, RL-NA, RL-AM, RL-GDEL, RL-LACC, RPD-SA, RPD-IO, RPD-NA, RPD-AM, RPD-GDEL, RPD-LACC).
+	* **nwk_HH_SR(BS, RPD)_SA(NA, AM, GDEL, LACC).m**: The main function of Hyperheuristics (SR-SA, SR-NA, SR-AM, SR-GDEL, SR-LACC, BS-SA, BS-NA, BS-AM, BS-GDEL, BS-LACC, RPD-SA, RPD-NA, RPD-AM, RPD-GDEL, RPD-LACC).
 		* Input: 'data', 'max_nfe', 't0SA' (their meanings are the same as those in **nwk_ss.m**)
 		* Output:  'final_best_value', 'final_best_solution', 'cput'(their meanings are the same as those in **nwk_ss.m**), 'Pro_record' (the probability of the Roulette)
 		* The functions **input_block**, **Roulette** and **COST** are sourced. 
