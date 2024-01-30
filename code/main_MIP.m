@@ -1,0 +1,33 @@
+clear;clc;close all;
+%% check the solver
+% yalmiptest
+%% load files
+dirname = '../benchmark/';
+filename = {
+    'I_1_1_1.txt';'I_1_1_2.txt'; ...
+    'I_1_1_3.txt';'I_1_1_4.txt'; ...
+    'I_1_1_5.txt';'I_2_2_1.txt'; ...
+    'I_2_2_2.txt';'I_2_2_3.txt'; ...
+    'I_2_2_4.txt';'I_2_2_5.txt'; ...
+    'I_3_3_1.txt';'I_3_3_2.txt'; ...
+    'I_3_3_3.txt';'I_3_3_4.txt'; ...
+    'I_3_3_5.txt';'I_4_4_1.txt'; ...
+    'I_4_4_2.txt';'I_4_4_3.txt'; ...
+    'I_4_4_4.txt';'I_4_4_5.txt'; ...
+    };
+for index = 1:length(filename)
+%     for index = 1:1
+    fprintf(filename{index});
+    fprintf('\n');
+    file = [dirname, filename{index}];
+    alldata = load(file);
+    [mip_solution, gurobi_info] = DHFJSP_MIP(alldata);
+    %% save the solution
+    pathname = '../statistical_analysis/MIP/';
+    if exist(pathname, 'file') == 0
+        fprintf(['Creating the folder\n' pathname, '\n please check.\n']);
+        mkdir(pathname);
+    end
+    solutionname = ['solution_' filename{index}(3:end-4)];
+    save([pathname, solutionname], 'mip_solution', 'gurobi_info');
+end
