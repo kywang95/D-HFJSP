@@ -18,7 +18,7 @@ The framework of matlab code is shown in D-HFJSP_framework_of_code.png and descr
     * **main_acfdc.m** : The main function of AC and FDC. The functions **inputbm**, **nwk_ss_landscape_ac**,  **nwk_ss_landscape_fdc** are sourced. Create 2 files:
 	    * *data_AC_(InstanceName)\_(InterationTimes).dat* with structure 's1_cost_ac' (AC(s)), 's1_ac' (MTAT along the random walk), 's1_method_No_ac' (the Neiborhoods in SS), 's1_trend' (the descending curve). 	
 	    * *data_FDC_(InstanceName)\_(InterationTimes).dat* with structure 's1_dis_opt' (the distance from the local optima to the global optima), 's1_dif_opt' (the difference in MTAT of the local optima and the global optima), 's1_fdc' (fdc value), 's1_trend' (the descending curve). 
-	* **main_LON.m**: The main function of the Local Optima Network. The functions **inputbm**, **nwk_ss_LON**,  and **nwk_ss_rand_LON** are sourced. Create 3 files:
+	* **main_LON.m**: The main function of the Local Optima Network. The functions **inputbm**, **nwk_ss_LON**,  **nwk_ss_rand_LON**, and **Graph3D** are sourced. In addition, **graph.LON.R** is used to visualize the network. Create 3 files:
 	    * *data\_(InstanceName)\_(NeighborhoodName)\_(InterationTimes).dat* with structures 's_cost' (MTAT of the local optima) and 's_solution' (the local search optima). 	
 	    * *data\_(InstanceName)\_(NeighborhoodName)\_(InterationTimes)\_nodes.csv* containing all the nodes of LON. 
 	    * *data\_(InstanceName)\_(NeighborhoodName)\_(InterationTimes)\_links.csv* containing all the links of LON.
